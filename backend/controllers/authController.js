@@ -15,15 +15,18 @@ const generateToken = (id) => {
 
 const registerUser = async (req, res) => {
   try {
-    const { name, email, password } = req.body;
+    const { name, email, password } =
+      req.body;
 
-    const existingUser = await User.findOne({
-      email,
-    });
+    const existingUser =
+      await User.findOne({
+        email,
+      });
 
     if (existingUser) {
       return res.status(400).json({
-        message: "User already exists",
+        message:
+          "User already exists",
       });
     }
 
@@ -39,11 +42,18 @@ const registerUser = async (req, res) => {
     await Notification.create({
       user: user._id,
       title: "Welcome",
-      message: "Welcome to AI Resume Analyzer",
+      message:
+        "Welcome to AI Resume Analyzer",
     });
 
     res.status(201).json({
-      message: "User registered successfully",
+      message:
+        "User registered successfully",
+
+      token: generateToken(
+        user._id
+      ),
+
       user: {
         id: user._id,
         name: user.name,
@@ -61,7 +71,8 @@ const registerUser = async (req, res) => {
 
 const loginUser = async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const { email, password } =
+      req.body;
 
     const user = await User.findOne({
       email,
@@ -75,11 +86,20 @@ const loginUser = async (req, res) => {
       ))
     ) {
       res.status(200).json({
-        token: generateToken(user._id),
+        token: generateToken(
+          user._id
+        ),
+
+        user: {
+          id: user._id,
+          name: user.name,
+          email: user.email,
+        },
       });
     } else {
       res.status(401).json({
-        message: "Invalid credentials",
+        message:
+          "Invalid credentials",
       });
     }
   } catch (error) {
@@ -91,11 +111,12 @@ const loginUser = async (req, res) => {
   }
 };
 
-const getCurrentUser = async (req, res) => {
+const getMe = async (req, res) => {
   try {
-    const user = await User.findById(
-      req.user._id
-    ).select("-password");
+    const user =
+      await User.findById(
+        req.user._id
+      ).select("-password");
 
     res.status(200).json(user);
   } catch (error) {
@@ -107,19 +128,16 @@ const getCurrentUser = async (req, res) => {
   }
 };
 
-
 const deleteAccount = async (
   req,
   res
 ) => {
   try {
-    const User = require("../models/User");
-
     await User.findByIdAndDelete(
       req.user._id
     );
 
-    res.json({
+    res.status(200).json({
       message:
         "Account deleted successfully",
     });
