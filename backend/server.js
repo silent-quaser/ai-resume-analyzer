@@ -21,8 +21,9 @@ connectDB();
 app.use(
   cors({
     origin: [
-      "http://localhost:3000",
-    ],
+  "http://localhost:3000",
+  "https://YOUR-VERCEL-URL.vercel.app",
+],
     credentials: true,
   })
 );
