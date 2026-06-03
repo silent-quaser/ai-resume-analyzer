@@ -3,6 +3,50 @@
 import DashboardLayout from "../../components/DashboardLayout";
 
 export default function SettingsPage() {
+  const handleDeleteAccount = async () => {
+  const confirmDelete = window.confirm(
+    "Are you sure you want to permanently delete your account?"
+  );
+
+  if (!confirmDelete) return;
+
+  try {
+    const token =
+      localStorage.getItem("token");
+
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/auth/delete-account`,
+      {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+
+    const data =
+      await response.json();
+
+    if (response.ok) {
+      alert(
+        "Account deleted successfully"
+      );
+
+      localStorage.removeItem(
+        "token"
+      );
+
+      window.location.href =
+        "/login";
+    } else {
+      alert(data.message);
+    }
+  } catch (error) {
+    console.error(error);
+
+    alert("Delete failed");
+  }
+};
   return (
     <DashboardLayout>
       <h1 className="text-4xl font-bold mb-8">
@@ -71,10 +115,11 @@ export default function SettingsPage() {
           </p>
 
           <button
-            className="bg-red-600 hover:bg-red-700 px-5 py-3 rounded-xl font-semibold"
-          >
-            Delete Account
-          </button>
+  onClick={handleDeleteAccount}
+  className="bg-red-600 hover:bg-red-700 transition-all duration-300 px-6 py-3 rounded-xl font-semibold"
+>
+  Delete Account
+</button>
         </div>
       </div>
     </DashboardLayout>

@@ -3,7 +3,8 @@ const express = require("express");
 const {
   registerUser,
   loginUser,
-  getCurrentUser,
+  getMe,
+  deleteAccount,
 } = require("../controllers/authController");
 
 const {
@@ -17,5 +18,17 @@ router.post("/register", registerUser);
 router.post("/login", loginUser);
 
 router.get("/me", protect, getCurrentUser);
+
+router.delete(
+  "/delete-account",
+  protect,
+  deleteAccount
+);
+
+router.delete(
+  "/delete-account",
+  protect,
+  deleteAccount
+);
 
 module.exports = router;
