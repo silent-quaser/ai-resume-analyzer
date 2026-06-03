@@ -13,16 +13,20 @@ const {
 
 const router = express.Router();
 
-router.post("/register", registerUser);
+router.post(
+  "/register",
+  registerUser
+);
 
-router.post("/login", loginUser);
+router.post(
+  "/login",
+  loginUser
+);
 
-router.get("/me", protect, getCurrentUser);
-
-router.delete(
-  "/delete-account",
+router.get(
+  "/me",
   protect,
-  deleteAccount
+  getMe
 );
 
 router.delete(
