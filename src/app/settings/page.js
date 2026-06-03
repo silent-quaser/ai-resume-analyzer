@@ -3,50 +3,57 @@
 import DashboardLayout from "../../components/DashboardLayout";
 
 export default function SettingsPage() {
-  const handleDeleteAccount = async () => {
-  const confirmDelete = window.confirm(
-    "Are you sure you want to permanently delete your account?"
-  );
+  const handleDeleteAccount =
+    async () => {
+      const confirmDelete =
+        window.confirm(
+          "Are you sure you want to permanently delete your account?"
+        );
 
-  if (!confirmDelete) return;
+      if (!confirmDelete) return;
 
-  try {
-    const token =
-      localStorage.getItem("token");
+      try {
+        const token =
+          localStorage.getItem(
+            "token"
+          );
 
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/api/auth/delete-account`,
-      {
-        method: "DELETE",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
+        const response =
+          await fetch(
+            `${process.env.NEXT_PUBLIC_API_URL}/api/auth/delete-account`,
+            {
+              method: "DELETE",
+
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          );
+
+        const data =
+          await response.json();
+
+        if (response.ok) {
+          alert(
+            "Account deleted successfully"
+          );
+
+          localStorage.removeItem(
+            "token"
+          );
+
+          window.location.href =
+            "/login";
+        } else {
+          alert(data.message);
+        }
+      } catch (error) {
+        console.error(error);
+
+        alert("Delete failed");
       }
-    );
+    };
 
-    const data =
-      await response.json();
-
-    if (response.ok) {
-      alert(
-        "Account deleted successfully"
-      );
-
-      localStorage.removeItem(
-        "token"
-      );
-
-      window.location.href =
-        "/login";
-    } else {
-      alert(data.message);
-    }
-  } catch (error) {
-    console.error(error);
-
-    alert("Delete failed");
-  }
-};
   return (
     <DashboardLayout>
       <h1 className="text-4xl font-bold mb-8">
@@ -54,14 +61,15 @@ export default function SettingsPage() {
       </h1>
 
       <div className="space-y-6 max-w-4xl">
-        
         <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:scale-[1.02] transition-all duration-300">
           <h2 className="text-2xl font-bold mb-4">
             Account Settings
           </h2>
 
           <p className="text-gray-400">
-            Manage your account preferences and profile information.
+            Manage your account
+            preferences and profile
+            information.
           </p>
         </div>
 
@@ -111,15 +119,20 @@ export default function SettingsPage() {
           </h3>
 
           <p className="text-gray-400 mb-4">
-            Permanently delete your account and all associated data.
+            Permanently delete your
+            account and all associated
+            data.
           </p>
 
           <button
-  onClick={handleDeleteAccount}
-  className="bg-red-600 hover:bg-red-700 transition-all duration-300 px-6 py-3 rounded-xl font-semibold"
->
-  Delete Account
-</button>
+            type="button"
+            onClick={
+              handleDeleteAccount
+            }
+            className="bg-red-600 hover:bg-red-700 transition-all duration-300 px-6 py-3 rounded-xl font-semibold"
+          >
+            Delete Account
+          </button>
         </div>
       </div>
     </DashboardLayout>
