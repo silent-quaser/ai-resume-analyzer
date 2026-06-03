@@ -20,10 +20,7 @@ connectDB();
 
 app.use(
   cors({
-    origin: [
-      "http://localhost:3000",
-      "https://ai-resume-analyzer-j8vu0vgkl-silent-quasers-projects.vercel.app",
-    ],
+    origin: true,
     credentials: true,
   })
 );
