@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -17,9 +18,12 @@ export default function Home() {
           of landing interviews.
         </p>
 
-        <button className="mt-8 bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-semibold">
+        <Link
+          href="/login"
+          className="mt-8 bg-gradient-to-r from-blue-500 to-cyan-400 hover:opacity-90 transition-all duration-300 shadow-lg shadow-blue-500/20 px-6 py-3 rounded-lg font-semibold"
+        >
           Get Started
-        </button>
+        </Link>
       </section>
 
       <Footer />
