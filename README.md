@@ -1,36 +1,203 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# AI Resume Analyzer
 
-## Getting Started
+An AI-powered career assistant platform built with Next.js, Node.js, MongoDB, and Gemini AI.
+The platform helps users analyze resumes, improve ATS scores, rewrite resumes professionally, prepare for interviews, and compare resume performance using AI.
 
-First, run the development server:
+---
+
+## Live Demo
+
+Frontend: https://ai-resume-analyzer-8l0gqmskr-silent-quasers-projects.vercel.app
+
+Backend API: https://ai-resume-analyzer-backend-vtui.onrender.com
+
+---
+
+## Features
+
+### AI Resume Analysis
+
+* Upload resume PDFs
+* Extract resume text automatically
+* AI-powered ATS analysis
+* Resume scoring and feedback
+* Skill gap identification
+
+### AI Resume Rewriter
+
+* Improve resume quality using Gemini AI
+* Rewrite resumes professionally
+* ATS optimization suggestions
+
+### AI Interview Preparation
+
+* Generate interview questions
+* Technical and HR preparation
+* AI-generated practice content
+
+### Job Match Engine
+
+* Match resumes against job descriptions
+* Skill comparison analysis
+* Job compatibility insights
+
+### Dashboard Analytics
+
+* Resume analysis history
+* Dashboard statistics
+* Performance tracking
+* Resume comparison system
+
+### Authentication System
+
+* JWT authentication
+* Protected routes
+* Secure login/register system
+
+---
+
+## Tech Stack
+
+### Frontend
+
+* Next.js
+* React
+* Tailwind CSS
+
+### Backend
+
+* Node.js
+* Express.js
+* MongoDB
+* Mongoose
+
+### AI Integration
+
+* Google Gemini AI API
+
+### Deployment
+
+* Frontend: Vercel
+* Backend: Render
+* Database: MongoDB Atlas
+
+---
+
+## Screenshots
+
+### Dashboard
+
+(Add screenshot here)
+
+### Resume Analyzer
+
+(Add screenshot here)
+
+### AI Resume Rewriter
+
+(Add screenshot here)
+
+### Interview Preparation
+
+(Add screenshot here)
+
+---
+
+## Installation
+
+### Clone Repository
+
+```bash
+git clone https://github.com/silent-quaser/ai-resume-analyzer.git
+```
+
+---
+
+## Backend Setup
+
+```bash
+cd backend
+npm install
+```
+
+Create `.env` file inside backend:
+
+```env
+MONGO_URI=your_mongodb_uri
+JWT_SECRET=your_jwt_secret
+GEMINI_API_KEY=your_gemini_api_key
+PORT=5000
+```
+
+Run backend:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Frontend Setup
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm install
+```
 
-## Learn More
+Create `.env.local` file:
 
-To learn more about Next.js, take a look at the following resources:
+```env
+NEXT_PUBLIC_API_URL=http://localhost:5000
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Run frontend:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run dev
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+ai-resume-analyzer/
+│
+├── backend/
+│   ├── controllers/
+│   ├── routes/
+│   ├── models/
+│   ├── middleware/
+│   └── services/
+│
+├── src/
+│   ├── app/
+│   ├── components/
+│   └── styles/
+│
+└── public/
+```
+
+---
+
+## Future Improvements
+
+* Resume templates
+* AI voice interview simulation
+* Real-time ATS scoring
+* OAuth authentication
+* Subscription system
+* Resume export system
+
+---
+
+## Author
+
+Naveen Krishnan
+
+GitHub: https://github.com/silent-quaser
+
+---
+
+## License
+
+This project is licensed under the MIT License.
