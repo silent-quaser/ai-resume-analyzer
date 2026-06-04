@@ -90,6 +90,77 @@ Backend API: https://ai-resume-analyzer-backend-vtui.onrender.com
 ![Dashboard 1](./public/screenshots/dashboard-1.png)
 
 ![Dashboard 2](./public/screenshots/dashboard-2.png)
+
+### Analyze Resume
+
+![Analyze Resume-1](./public/screenshots/analyzer-1.png)
+
+![Analyze Resume-2](./public/screenshots/analyzer-2.png)
+
+### History
+
+![History 1](./public/screenshots/history-1.png)
+
+![History 2](./public/screenshots/history-2.png)
+
+![History 3](./public/screenshots/history-3.png)
+
+### Compare Resumes
+
+![Compare Resume 1](./public/screenshots/compare-1.png)
+
+![Compare Resume 2](./public/screenshots/compare-2.png)
+
+### AI Resume Rewriter 
+
+![Resume Rewriter 1](./public/screenshots/resume-rewriter-1.png)
+
+![Resume Rewriter 2](./public/screenshots/resume-rewriter-2.png)
+
+![Resume Rewriter 3](./public/screenshots/resume-rewriter-3.png)
+
+### Job Match Engine 
+
+![Job Match 1](./public/screenshots/job-match-1.png)
+
+![Job Match 2](./public/screenshots/job-match-2.png)
+
+![Job Match 3](./public/screenshots/job-match-3.png)
+
+![Job Match 4](./public/screenshots/job-match-4.png)
+
+### AI Interview Prep
+
+![Interview prep 1](./public/screenshots/interview-1.png)
+
+![Interview prep 2](./public/screenshots/interview-2.png)
+
+### Profile 
+
+![Profile ](./public/screenshots/profile.png)
+
+### Settings
+
+![Settings 1](./public/screenshots/settings-1.png)
+
+![Settings 2](./public/screenshots/settings-2.png)
+
+### Notification
+
+![Notification ](./public/screenshots/notification.png)
+
+### Info
+
+![Info ](./public/screenshots/info.png)
+
+### Register
+
+![Register ](./public/screenshots/register.png)
+
+### Login 
+
+![Login ](./public/screenshots/login.png)
+
 ---
 
 ## Installation
