@@ -87,20 +87,9 @@ Backend API: https://ai-resume-analyzer-backend-vtui.onrender.com
 
 ### Dashboard
 
-(Add screenshot here)
+![Dashboard 1](./public/screenshots/dashboard-1.png)
 
-### Resume Analyzer
-
-(Add screenshot here)
-
-### AI Resume Rewriter
-
-(Add screenshot here)
-
-### Interview Preparation
-
-(Add screenshot here)
-
+![Dashboard 2](./public/screenshots/dashboard-2.png)
 ---
 
 ## Installation
